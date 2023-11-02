@@ -15,6 +15,11 @@ function ToDo(props) {
         <p>{props.title} </p>
         <label>completed: </label>
         <input checked={check} onChange={handleChange} type="checkbox" />
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
     </>
     );
 }

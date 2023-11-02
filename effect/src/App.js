@@ -1,9 +1,12 @@
 import ToDo from "./ToDo";
+import Comment from "./Comment";
 import { useEffect, useState } from "react";
 
 function App(props) {
 
   const [todo, setToDo] = useState({});
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     async function getToDo() {
       const response = await fetch('https://jsonplaceholder.typicode.com/todos/4');
@@ -11,18 +14,15 @@ function App(props) {
       setToDo(data);
       }
     getToDo();
+    setLoading(false);
   }, []);
-  
-  // const todo = {
-  //   userId: 1,
-  //   id: 1,
-  //   title: "An autist has been detected!!!",
-  //   completed: false,
-  // }
+
+
 
   return (
     <>
-    <ToDo {...todo} />
+    {loading ? <p>Loading...</p> : <ToDo {...todo} />}
+    <Comment />
     </>
   );
 }
