@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Comment(props) {
+function Comment() {
 
     const [comment, setComment] = useState({});
     const [loading, setLoading] = useState(true);
@@ -17,13 +17,14 @@ function Comment(props) {
 
     return(
         <>
-        {loading ? <p>Loading...</p> :
+        {
+        loading ? <p>Loading...</p> :
         <>
-            <p>UserId: {props.postId} </p>
-            <p>Id: {props.id} </p>
-            <p>Name: {props.name} </p>
-            <p>Email: {props.email} </p>
-            <p>Comment: {props.body} </p>
+            <p>UserId: {comment.postId} </p>
+            <p>Id: {comment.id} </p>
+            <p>Name: {comment.name} </p>
+            <p>Email: {comment.email} </p>
+            <p>Comment: {comment.body} </p>
         </>
         }
         </>
