@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Name from "./Name";
+import Post from "./Post";
 
 function NamesList() {
 
@@ -15,7 +15,7 @@ useEffect(() => {
 }, []);
 
 const namesListJSX = names.map((names, index) => {
-  return <p> <Name key={index} {...names} /> </p>
+  return <p> <Post key={index} {...names} /> </p>
 });
 
 return (
