@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Post from "./Post";
 
-function NamesList() {
+function NamesList(props) {
 
 const [names, setNamesList] = useState([]);
 
